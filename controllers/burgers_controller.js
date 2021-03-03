@@ -10,7 +10,7 @@ const burger = require('../models/burger.js');
 // Create the router for the app, and export the router at the end of your file.
 
 router.get('/', (req, res) => {
-    burger.all((data) => {
+    burger.selectAll((data) => {
       const hbsObject = {
         burgers: data,
       };
@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
   });
   
   router.post('/api/burgers', (req, res) => {
-    burger.insert(['burger_name', 'devoured'], [req.body.burger_name, req.body.devoured], (result) => {
+    burger.insertOne(['burger_name', 'devoured'], [req.body.burger_name, req.body.devoured], (result) => {
       // Send back the ID of the new quote
       res.json({ id: result.insertId });
     });
@@ -31,7 +31,7 @@ router.get('/', (req, res) => {
   
     console.log('condition', condition);
   
-    burger.update(
+    burger.updateOne(
       {
         devoured: req.body.devoured,
       },

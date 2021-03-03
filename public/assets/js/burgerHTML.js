@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
       // Grabs the value of the textarea that goes by the name, "quote"
       const newBurger = {
-        name: document.getElementById('burg').value.trim(),
-        uneaten: document.getElementById('uneaten').checked,
+        burger_name: document.getElementById('burg').value.trim(),
+        devoured: false,
       };
 
       // Send POST request to create a new quote
@@ -41,6 +41,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
       });
     });
   }
+
+  
 
 
 

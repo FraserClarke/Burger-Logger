@@ -12,7 +12,8 @@ PUT. update data. uses body for data --}}
 <ul>
   {{#each burgers}}
   {{#unless devoured}}
-  {{> burgers/burgers-block devoured=true}}
+  <li>{{burger_name}}</li>
+  {{!-- {{> burgers/burgers-block devoured=true}} --}}
   {{/unless}}
   {{/each}}
 </ul>
@@ -22,7 +23,8 @@ PUT. update data. uses body for data --}}
 <ul>
   {{#each burgers}}
   {{#if devoured}}
-  {{> burgers/burger-block devoured=false}}
+   <li>{{burger_name}}</li>
+  {{!-- {{> burgers/burger-block devoured=false}} --}}
   {{/if}}
   {{/each}}
 </ul>
