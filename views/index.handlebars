@@ -3,15 +3,16 @@
 
 Create a button in index.handlebars that will submit the user input into the database. --}}
 {{!-- get. used for getting data/reading data. Uses url parameters.
-post insert new data. uses body for data.
-put. update data. uses body for data --}}
+
+POST insert new data. uses body for data.
+PUT. update data. uses body for data --}}
 
 <h2>Uneaten Burger</h2>
 
 <ul>
   {{#each burgers}}
   {{#unless devoured}}
-  {{> cats/cat-block sleep=true}}
+  {{> burgers/burgers-block devoured=true}}
   {{/unless}}
   {{/each}}
 </ul>
@@ -19,9 +20,9 @@ put. update data. uses body for data --}}
 <h2>Devoured Burger!</h2>
 
 <ul>
-  {{#each cats}}
-  {{#if sleepy}}
-  {{> cats/cat-block sleep=false}}
+  {{#each burgers}}
+  {{#if devoured}}
+  {{> burgers/burger-block devoured=false}}
   {{/if}}
   {{/each}}
 </ul>
@@ -30,8 +31,8 @@ put. update data. uses body for data --}}
 <form id="create-form">
 
   <div class="form-group">
-    <label for="ca">Add burger:</label>
-    <input type="text" id="ca" name="name">
+    <label for="burg">Add burger:</label>
+    <input type="text" id="burg" name="name">
   </div>
 
 
