@@ -3,11 +3,34 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
-		<title>Burgers!</title>
+		<link rel="stylesheet" href="/assets/css/style.css" type="text/css"
+         />
+		<link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" 
+    crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+        <title>Burgers!</title>
+
 		<script src="/assets/js/burgerHTML.js"></script>
 	</head>
 	<body>
-		{{{ body }}}
+        {{!-- get. used for getting data/reading data. Uses url parameters.
+post insert new data. uses body for data.
+put. update data. uses body for data --}}
+        <img src="../../public/assets/img/burger.png" alt="Burger Image">
+		<header> Eat-Da-Burger!</header>
+        {{{ body }}}
 	</body>
 </html>
