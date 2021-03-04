@@ -1,6 +1,11 @@
 img {
-    align-content: center;
+  align-content: center;
 }
+
 html {
-    background-color: rgb(221, 180, 67);
+  background-color: rgb(221, 180, 67);
+}
+
+body {
+  background-color: rgb(221, 180, 67);
 }

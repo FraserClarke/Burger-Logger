@@ -13,9 +13,11 @@ PUT. update data. uses body for data --}}
   {{#each burgers}}
   {{#unless devoured}}
   <li>{{burger_name}}
-      <button Devour! class="devoured" Devour! data-id="{{id}}" data-newdevour="{{devoured}}">
-		{{#if devoured}}Devoured!{{/if}}
+      <button  class="devoured"  data-id="{{id}}" data-newdevour="{{devoured}}">
+		Devour!{{#if devoured}}Devoured!{{/if}}   
 	</button>
+    {{!-- add bootstrap class   --}}
+
   </li>
   {{!-- {{> burgers/burgers-block devoured=true}} --}}
   {{!-- {{else}}WAKE UP! --}}
