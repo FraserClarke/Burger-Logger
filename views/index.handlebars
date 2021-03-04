@@ -12,8 +12,13 @@ PUT. update data. uses body for data --}}
 <ul>
   {{#each burgers}}
   {{#unless devoured}}
-  <li>{{burger_name}}</li>
+  <li>{{burger_name}}
+      <button class="devoured" data-id="{{id}}" data-newdevour="{{devoured}}">
+		{{#if devoured}}Devoured!{{/if}}
+	</button>
+  </li>
   {{!-- {{> burgers/burgers-block devoured=true}} --}}
+  {{!-- {{else}}WAKE UP! --}}
   {{/unless}}
   {{/each}}
 </ul>
