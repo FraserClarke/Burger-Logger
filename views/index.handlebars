@@ -6,44 +6,59 @@ Create a button in index.handlebars that will submit the user input into the dat
 
 POST insert new data. uses body for data.
 PUT. update data. uses body for data --}}
+<div class="row">
+    <div class="col-md-9">
+        <h2>Uneaten Burger</h2>
 
-<h2>Uneaten Burger</h2>
+        <ul>
+            {{#each burgers}}
+            {{#unless devoured}}
+            <li>{{burger_name}}
+                <button class="devoured" data-id="{{id}}" data-newdevour="{{devoured}}">
+                    Devour!{{#if devoured}}Devoured!{{/if}}
+                </button>
+                {{!-- add bootstrap class --}}
 
-<ul>
-  {{#each burgers}}
-  {{#unless devoured}}
-  <li>{{burger_name}}
-      <button  class="devoured"  data-id="{{id}}" data-newdevour="{{devoured}}">
-		Devour!{{#if devoured}}Devoured!{{/if}}   
-	</button>
-    {{!-- add bootstrap class   --}}
+            </li>
+            {{!-- {{> burgers/burgers-block devoured=true}} --}}
+            {{!-- {{else}}WAKE UP! --}}
+            {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
 
-  </li>
-  {{!-- {{> burgers/burgers-block devoured=true}} --}}
-  {{!-- {{else}}WAKE UP! --}}
-  {{/unless}}
-  {{/each}}
-</ul>
+    <div class="col-md-3">
+        <h2>Devoured Burger!</h2>
 
-<h2>Devoured Burger!</h2>
+        <ul>
+            {{#each burgers}}
+            {{#if devoured}}
+            <li>{{burger_name}}</li>
+            {{!-- {{> burgers/burger-block devoured=false}} --}}
+            {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+</div>
 
-<ul>
-  {{#each burgers}}
-  {{#if devoured}}
-   <li>{{burger_name}}</li>
-  {{!-- {{> burgers/burger-block devoured=false}} --}}
-  {{/if}}
-  {{/each}}
-</ul>
+<div class="row submit">
+    <div class="col-md-12">
+        <h2>Add a burger</h2>
+        <form id="create-form">
 
-<h2>Add a burger</h2>
-<form id="create-form">
-
-  <div class="form-group">
-    <label for="burg">Add burger:</label>
-    <input type="text" id="burg" name="name">
-  </div>
+            <div class="form-group">
+                <label for="burg">Add burger:</label>
+                <input type="text" id="burg" name="name">
+            </div>
 
 
-  <button type="submit">Submit</button>
-</form>
+            <button class="btn btn-light" type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+{{!-- <div class="footer">
+    <img class="footerimg" src="/assets/css/footer1.jpg" alt="footer neon Image"> --}}
+    {{!-- <p>Footer</p> --}}
+    {{!--
+</div> --}}
